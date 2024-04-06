@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">"
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="logo"></div>
+    <div class="container">
+        <h2>Thông tin nhân viên</h2>
+        <form>
+            <div class="form-group">
+                <label for="idnv"> ID nhân viên:</label>
+                <input type="text" class="form-control" id="idnv" placeholder="Nhập ID nhân viên" name="idnv">
+            </div>
+            <div class="form-group">
+                <label for="hoten"> Họ và tên nhân viên:</label>
+                <input type="text" class="form-control" id="hoten" placeholder="Nhập Họ và tên sinh viên" name="hoten">
+            </div>
+            <div class="form-group">
+                <label for="cmnd"> CMND:</label>
+                <input type="text" class="form-control" id="cmnd" placeholder="Nhập CMND" name="cmnd">
+            </div>
+            <div class="form-group">
+                <label for="diachi"> Địa chỉ:</label>
+                <input type="text" class="form-control" id="diachi" placeholder="Nhập địa chỉ nhân viên" name="diachi">
+            </div>
+            <div class="form-group">
+                <label for="sdt"> Số điện thoại:</label>
+                <input type="text" class="form-control" id="sdt" placeholder="Nhập số điện thoại" name="sdt">
+            </div>
+            <button type="button" class="btn-btn-success" onclick="Themnhanvien()">Thêm nhân viên</button>
+        </form>
+        <div style="float: right;">
+            <button class="btn-btn-success" onclick="SetStorage()">Lưu Storage</button>
+            <button class="btn-btn-success" onclick="GetStorage()">Lấy Storage</button>
+            <button class="btn-btn-success" onclick="XoaNhanVien()">Xóa nhân viên</button>
+        </div>
+    </div>
+    <div class=" clearfix"></div>
+    <br>
+    <div class="container">
+        <div class="right">
+            <div class="input-group">
+                <input type="text" id="tukhoa" onkeyup="TimKiemNhanVien()" onchange="TimKiemNhanVien">
+                <span class="input-group-btn">
+                    <button class="btn-btn-secondary" onclick="TimKiemNhanVien()" type="button">Tìm kiếm nhân
+                        viên</button>
+                </span>
+            </div>
+            <br />
+            <div class="alert alert-success" id="ThongBao"></div>
+        </div>
+        <h2>Danh sách nhân viên</h2>
+        <p></p>
+        <table id="TableNhanVien" class="table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>ID nhân viên</th>
+                    <th>Họ và tên</th>
+                    <th>CMND</th>
+                    <th>Địa chỉ</th>
+                    <th>Số điện thoại</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyNhanVien">
+                <tr>
+                    <td></td>
+                    <td>gia tri cot 1</td>
+                    <td>gia tri cot 2</td>
+                    <td>gia tri cot 3</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script type="text/javascript" src="NhanVien.js"></script>
+    <script type="text/javascript" src="DanhSachNhanVien.js"></script>
+    <script type="text/javascript" src="Validation.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+
+</body>
+
+</html>
